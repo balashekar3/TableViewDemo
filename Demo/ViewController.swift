@@ -68,6 +68,18 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //Animation
+        //Set Initial cell
+        cell.alpha=0
+//       let transform=CATransform3DTranslate(CATransform3DIdentity, -200, 20, 0)
+//        cell.layer.transform=transform
+        //Set Final cell
+        UIView.animate(withDuration: 1.0) {
+            cell.alpha=1.0
+//            cell.layer.transform=CATransform3DIdentity
+        }
+    }
     
     
 }
